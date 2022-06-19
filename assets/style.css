@@ -5,12 +5,15 @@
     padding: 0;
 }
 
-
-
+body {
+    background: url(./img/img3);
+    background-size: cover;
+    background-position: center;
+}
 
 .container {
     color: white;
-    background: linear-gradient(145deg, #2193b0, #6dd5ed);
+    background: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
     width: 400px;
     margin: 50px auto;
     border-radius: 5px;
@@ -33,6 +36,7 @@
     margin-right: 5px;
     position: absolute;
     left: 0;
+    cursor: pointer;
 }
 
 #search-input {
@@ -44,8 +48,42 @@
     color: white;
 }
 
+.microphone {
+    cursor: pointer;
+}
+
+.microphone .recording-icon {
+    display: none;
+    height: 10px;
+    width: 10px;
+    background-color: #e22d2d;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite linear;
+}
+
+.microphone.recording .recording-icon {
+    display: inline-block;
+}
+
+.microphone.recording .fa-microphone {
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 3px 0 rgba(173, 0, 0, .3);
+    }
+
+    65% {
+        box-shadow: 0 0 3px 5px rgba(173, 0, 0, .3);
+    }
+    100% {
+        box-shadow: 0 0 3px 5px rgba(173, 0, 0, 0);
+    }
+}
+
 #search-input::placeholder {
-    color: rgb(206, 206, 206);
+    color: rgb(246, 243, 243);
 }
 
 .info-wrapper {
@@ -80,7 +118,6 @@
 .temperature::after {
     content: "o";
     position: absolute;
-    
     font-size: 30px;
 }
 
